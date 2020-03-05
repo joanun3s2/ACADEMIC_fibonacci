@@ -6,6 +6,21 @@ Both *GDB* and *manual debbuging* and comparing both to understand which can be 
 
 On the */Documents/* directory you can find documentation about the requeried problem solution and an kind of *starting guid to* ***GDB*** such as the report of the found problems on the original code.
 
-#### Authoral info
-* Authored by ***João Paulo Nunes*** (*Joa*) in ***05/03/2020*** (*dd/MM/yyyy*)
-* At ***UFRN - IMD(Digital Metropolis Institute)*** / *Federal University of Rio Grande do Norte* - *Natal-RN, Brazil*
+#### Execution info
+Theres no *Makefile* so to run it you must use terminal and type:
+```bash
+g++ -std=c++11 fib_series_bugged.cpp -o run
+```
+and
+```bash
+./run
+```
+
+
+## Authoral info
+Authored by ***João Paulo Nunes*** (*Joa*) in ***05/03/2020*** (*dd/MM/yyyy*)
+
+At ***UFRN - IMD(Digital Metropolis Institute)*** / *Federal University of Rio Grande do Norte* - *Natal-RN, Brazil*
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
