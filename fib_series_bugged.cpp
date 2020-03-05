@@ -41,12 +41,14 @@ fib( int _limit, int  * _A )
 {
     int count = 0;
     int fib0 = 0;
-    int fib1 = 0;
+    int fib1 = 1;   // fib1 é o segundo elemento, logo deve ser 1
     int fib2 = 0;
-    while ( fib2 < _limit )
+
+    cout << fib0 << " " << fib1;    // imprime os dois primeiros termos antes da recursividade
+    while ( fib2 < _limit ) // o loop so vale a partir do terceiro termo
     {
         fib2 = fib0 + fib1;
-        cout << fib2 << " "; // imprimir na tela apenas para depurar
+        cout << " " << fib2; // imprimir na tela apenas para depurar
         count++; // usado para determinar o comprimento da serie.
         fib0 = fib1;
         fib1 = fib2;
