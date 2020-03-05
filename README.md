@@ -6,7 +6,7 @@ Both *GDB* and *manual debbuging* and comparing both to understand which can be 
 
 On the ´/Documents´ directory you can find documentation about the requeried problem solution and an kind of *starting guid to* ***GDB*** such as the report of the found problems on the original code.
 
-## Authored by ***João Paulo Nunes*** (*Joa*)
-## Date: **05/03/2020** (*dd/MM/yyyy*)
-## Place: *UFRN - IMD(Digital Metropolis Institute)*
-## *Federal University of Rio Grande do Norte* - *Natal-RN, Brazil
+### Authored by ***João Paulo Nunes*** (*Joa*)
+### Date: **05/03/2020** (*dd/MM/yyyy*)
+### Place: *UFRN - IMD(Digital Metropolis Institute)*
+### *Federal University of Rio Grande do Norte* - *Natal-RN, Brazil
