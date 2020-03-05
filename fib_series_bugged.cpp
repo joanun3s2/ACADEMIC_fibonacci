@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <vector>
 
 using namespace::std;
 
@@ -39,25 +40,33 @@ printArray( int _A[ ], int _sz )
 int
 fib( int _limit, int  * _A )
 {
+
+    vector<int> sequencia;
+
     int count = 0;
     int fib0 = 0;
     int fib1 = 1;   // fib1 é o segundo elemento, logo deve ser 1
     int fib2 = 0;
 
-    cout << fib0 << " " << fib1;    // imprime os dois primeiros termos antes da recursividade
-    while ( fib2 < _limit ) // o loop so vale a partir do terceiro termo
-    {
+    // adiciona os primeiros dois elementos à sequência 
+    sequencia.push_back(fib0); 
+    sequencia.push_back(fib1);
+
+    // o loop so vale a partir do terceiro termo
+    while ( fib2 < _limit ){
+
         fib2 = fib0 + fib1;
-        cout << " " << fib2; // imprimir na tela apenas para depurar
         count++; // usado para determinar o comprimento da serie.
         fib0 = fib1;
         fib1 = fib2;
+        sequencia.push_back(fib2);
+
     }
     cout << endl; // descarregar a lista.
 
     // TODO: Aqui devemos criar e preencher o vetor com a serie
-    //
     
+
     return count;
 }
 
