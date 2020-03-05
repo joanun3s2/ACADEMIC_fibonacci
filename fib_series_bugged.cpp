@@ -11,19 +11,17 @@ using namespace::std;
 
 //-------------------------------------------------------------------------------
 //! Imprime um vetor de inteiros longos sem sinal.
-/*! Esta funcao imprime na saida padrao um vetor de inteiros cujo tamanho eh
- *  passado como argumento.
+/*! Esta funcao imprime na saida padrao um vetor de inteiros.
  *  @param _A O vetor a ser impresso na saida padrao.
- *  @param _sz O tamanho do vetor passado como argumento.
  */
-void
-printArray( int _A[ ], int _sz )
+void printArray( vector<int> &_A )
 {
     // Imprimir o vetor.
     cout << ">>> [ ";
-    for ( int i(0) ; i <= _sz ; ++i )
+    for ( int i(1) ; i < _A.size() ; ++i ){   // Exclui o primeiro elemento(0) da sequência e imprime todos os seguintes
         cout << _A[ i ] << " ";
-    cout << "]\n";
+    }
+    cout << "]" << endl;
 }
 
 //-------------------------------------------------------------------------------
@@ -34,53 +32,44 @@ printArray( int _A[ ], int _sz )
  *  visto que o ultimo elemento da serie e 13 < limite (=15).
  *
  *  @param _limit O limite inteiro que determina o fim da serie.
- *  @param _A Pointeiro que deverah conter o vetor com a serie.
- *  @return Number of elements in the Fibonacci series (size of _A)
+ *  @param _A Referencia ao vetor com a serie.
  */
-int
-fib( int _limit, int  * _A )
+void fib( int _limit, vector<int> &_A )
 {
 
-    vector<int> sequencia;
-
-    int count = 0;
     int fib0 = 0;
-    int fib1 = 1;   // fib1 é o segundo elemento, logo deve ser 1
+    int fib1 = 1;   // fib1 é o segundo elemento(contando-se com o 0), logo deve ser 1
     int fib2 = 0;
-
-    // adiciona os primeiros dois elementos à sequência 
-    sequencia.push_back(fib0); 
-    sequencia.push_back(fib1);
 
     // o loop so vale a partir do terceiro termo
     while ( fib2 < _limit ){
 
+        _A.push_back(fib2);
         fib2 = fib0 + fib1;
-        count++; // usado para determinar o comprimento da serie.
         fib0 = fib1;
         fib1 = fib2;
-        sequencia.push_back(fib2);
+        
 
     }
-    cout << endl; // descarregar a lista.
+    cout << endl; // Indica o encerramento da operção e quebra linha para organizar
 
-    // TODO: Aqui devemos criar e preencher o vetor com a serie
-    
-
-    return count;
 }
 
 int main () {
     int L; // Valor limite da serie, cujo valor maximo deve ser inferior.
-    int *A = nullptr; // Ponteiro para o vetor a ser criado dinamicamente.
+    vector<int> A;  // Vetor que irá guardar a sequência
 
     cout << ">>> Indique o limite para a serie de Fibonacci (n > 0): ";
     cin >> L; // Ler valor do terminal.
 
     if ( L >= 0 ) {
-        auto sz = fib( L, A ); // Gerar a Fibonacci em vetor.
-        cout << ">>> The Fibonacci series up to " << L << "is: \n";
-        printArray( A, sz ); // Imprimir vetor na saida padrao.
+        fib( L, A ); // Gerar a Fibonacci em vetor.
+        cout << ">>> The Fibonacci series up to " << L << " is: " << endl;
+        printArray( A ); // Imprimir vetor na saida padrao.
+
+        cout << endl << ">>> Normal exiting..." << endl;
+
+    }else{
+        cout << ">>> Sorry, only positive integers accepted. Aborting..." << endl;
     }
-    else cout << ">>> Sorry, only positive integers accepted. Aborting...\n";
 }
